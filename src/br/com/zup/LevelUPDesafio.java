@@ -14,13 +14,17 @@ public class LevelUPDesafio {
         2- o que é um numero impar (verificar se o numero é impar) //% 2 != 0
 
         3- se o numero for impar somar a var soma */
+            /*valorInicial = valorInicial % 2 != 0;
+            valorFinal = valorFinal % 2 != 0;
+            soma = valorInicial - valorFinal;
+            System.out.println("A soma é: " +soma);*/
 
         Scanner leitorImpares = new Scanner (System.in);
 
         //variaveis
         double valorInicial;
         double valorFinal;
-        double soma;
+        double soma = 0;
 
         System.out.println("Insira o valor inicial:");
         valorInicial = leitorImpares.nextDouble();
@@ -30,13 +34,12 @@ public class LevelUPDesafio {
         //Se o usuario digitar um intervalo invalido
         if (valorFinal < valorInicial) {
             System.out.println("Intervalo de valores inválido");
-        } else if (valorFinal >= valorInicial) {
-            valorInicial = valorInicial % 2 != 0;
-            valorFinal = valorFinal % 2 != 0;
-            soma = valorInicial - valorFinal;
-            System.out.println("A soma é: " +soma);
+        } if (valorInicial % 2 != 0) {
+                for (valorInicial = 0; valorInicial >= valorFinal; valorInicial += 2);
+                soma += valorInicial;
+            }
+            System.out.println("a soma dos numeros ímpares é: " + valorInicial);
+
         }
 
-
     }
-}
