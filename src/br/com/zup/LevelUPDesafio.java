@@ -1,5 +1,7 @@
 package br.com.zup;
 
+import java.util.Scanner;
+
 public class LevelUPDesafio {
     public static void main(String[] args) {
         //LEVEL UP. Faça um programa que some os números ímpares contidos em um intervalo definido pelo usuário. O usuário define o valor inicial do intervalo e o valor final deste intervalo e o programa deve somar todos os números ímpares contidos neste intervalo. Caso o usuário digite um intervalo inválido (começando por um valor maior que o valor final) deve ser escrito uma mensagem de erro na tela, “Intervalo de valores inválido” e o programa termina.
@@ -13,7 +15,27 @@ public class LevelUPDesafio {
 
         3- se o numero for impar somar a var soma */
 
+        Scanner leitorImpares = new Scanner (System.in);
 
+        //variaveis
+        double valorInicial;
+        double valorFinal;
+        double soma;
+
+        System.out.println("Insira o valor inicial:");
+        valorInicial = leitorImpares.nextDouble();
+        System.out.println("Insira o valor final:");
+        valorFinal = leitorImpares.nextDouble();
+
+        //Se o usuario digitar um intervalo invalido
+        if (valorFinal < valorInicial) {
+            System.out.println("Intervalo de valores inválido");
+        } else if (valorFinal >= valorInicial) {
+            valorInicial = valorInicial % 2 != 0;
+            valorFinal = valorFinal % 2 != 0;
+            soma = valorInicial - valorFinal;
+            System.out.println("A soma é: " +soma);
+        }
 
 
     }
